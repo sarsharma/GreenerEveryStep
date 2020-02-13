@@ -64,13 +64,13 @@
 
         <p class="text-center w-responsive mx-auto mb-5">Do you have any questions or suggestions for us? Feel free to
             contact us
-            using this form or send us an email at greenereverystep@gmail.com</p>
+            using this form</p>
 
         <div class="row">
 
 
             <div class="col-md-9 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <form id="contact-form" name="contact-form" action="php/contactus.php" method="POST">
 
 
                     <div class="row">
@@ -78,8 +78,9 @@
 
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="name" name="name" class="form-control">
-                                <label for="name" class="">Your name</label>
+                                <input type="text" id="name" name="name" class="form-control" required
+                                    placeholder="Your Name">
+
                             </div>
                         </div>
 
@@ -87,8 +88,9 @@
 
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="email" name="email" class="form-control">
-                                <label for="email" class="">Your email</label>
+                                <input type="text" id="email" name="email" class="form-control" required
+                                    placeholder="Your Email">
+
                             </div>
                         </div>
 
@@ -100,8 +102,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="md-form mb-0">
-                                <input type="text" id="subject" name="subject" class="form-control">
-                                <label for="subject" class="">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-control" required
+                                    placeholder="Subject">
+
                             </div>
                         </div>
                     </div>
@@ -115,34 +118,32 @@
 
                             <div class="md-form">
                                 <textarea type="text" id="message" name="message" rows="2"
-                                    class="form-control md-textarea"></textarea>
-                                <label for="message">Your message</label>
+                                    class="form-control md-textarea" placeholder="Your Message"></textarea>
+
                             </div>
 
                         </div>
                     </div>
 
+                    <input type="submit" class="btn btn-primary" value="Send">
+
 
                 </form>
 
-                <div class="text-center text-md-left">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+
+
+                <div class="col-md-3 text-center">
+                    <ul class="list-unstyled mb-0">
+
+
+                        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                            <p></p>
+                        </li>
+                    </ul>
                 </div>
-                <div class="status"></div>
+
+
             </div>
-
-            <div class="col-md-3 text-center">
-                <ul class="list-unstyled mb-0">
-
-
-                    <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                        <p></p>
-                    </li>
-                </ul>
-            </div>
-
-
-        </div>
 
     </section>
 

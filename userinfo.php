@@ -1,7 +1,7 @@
 <?php
 
 
-$con=mysqli_connect('localhost', 'root', '1234');
+$con=mysqli_connect('remotemysql.com:3306', 'JPBHeUjzfq', 'h01WPRgTp9');
 
 if($con){
 echo "Connection Successful";
@@ -15,18 +15,26 @@ echo "Connection Failed";
 
 }
 
-mysqli_select_db($con, 'testdb');
+/*
 
-$username=$_POST['name'];
-$email=$_POST['email'];
+mysqli_select_db($con, 'JPBHeUjzfq');
 
-//echo  "$email";
+$username=$_POST['existingusername'];
+$email=$_POST['existingpassword'];
 
-$query="INSERT INTO `users`(`username`, `email`) VALUES ('$username', '$email');";
+echo  "$email";
+
+*/
+mysqli_select_db($con, 'JPBHeUjzfq');
+
+$username=$_POST['existingusername'];
+$password=$_POST['existingpassword'];
+
+$query="INSERT INTO `userlogin`(`username`, `password`) VALUES ('$username', '$password');";
 
 mysqli_query($con, $query);
 
-
+echo "Inserted";
 
 ?>
 

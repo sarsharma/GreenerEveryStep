@@ -59,7 +59,7 @@
 
         <div class="login-wrap">
             <div class="login-html">
-                <form action="post">
+                <form action="userinfo.php" method="post">
                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
                         class="tab">Sign
                         In</label>
@@ -73,8 +73,8 @@
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Password</label>
-                                <input id="pass" type="password" class="input" data-type="existingpassword"
-                                    name="password">
+                                <input id="pass" type="password" class="input" data-type="password"
+                                    name="existingpassword">
                             </div>
                             <div class="group">
                                 <input id="check" type="checkbox" class="check" checked name="signedin">
@@ -89,7 +89,7 @@
                 </form>
 
                 <div class="sign-up-htm">
-                    <form action="post">
+                    <form action="userinfo.php" method="post">
                         <div class="group">
                             <label for="user" class="label">Username</label>
                             <input id="user" type="text" class="input" name="username">
