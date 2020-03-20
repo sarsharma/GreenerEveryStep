@@ -1,10 +1,9 @@
 <?php
 
+require_once "config.php";
 
-$con=mysqli_connect('remotemysql.com:3306', 'JPBHeUjzfq', 'h01WPRgTp9');
+mysqli_select_db($con, DB_NAME);
 
-
-mysqli_select_db($con, 'JPBHeUjzfq');
 
 $name=$_POST['name'];
 $email=$_POST['email'];
@@ -17,7 +16,12 @@ $query="INSERT INTO `contactform`( `name`, `email`, `subject`, `message`) VALUES
 
 mysqli_query($con, $query);
 
-echo "Message Sent";
+echo "Message Sent, Redirecting to Main Page..";
+
+header("Refresh: 3; URL=../index.html"); 
+
+
+
 
 ?>
 
