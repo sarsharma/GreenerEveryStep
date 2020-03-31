@@ -39,7 +39,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href=<?php 
                     if(isset($_SESSION["loggedin"])){
-                        echo "user.php";
+                        echo "php/logout.php";
                     }
                     else{
                         echo "php/login.php";

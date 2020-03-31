@@ -4,25 +4,26 @@
 <head>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   
+
 
 </head>
 
 <body>
 
     <nav>
-    <div id="header">
-        <script>
-                $(function(){
+        <div id="header">
+            <script>
+                $(function() {
                     $('#header').load('reusenavbar.php');
 
                 });
             </script>
-  
+
         </div>
     </nav>
 
-    <header class="masthead" style="background-image: url('images/introslides/image3.jpeg')">
+    <!--
+         <header class="masthead" style="background-image: url('images/introslides/image3.jpeg')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -131,3 +132,8 @@
 </body>
 
 </html>
+            -->
+            
+
+
+   

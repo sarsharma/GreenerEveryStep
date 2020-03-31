@@ -24,4 +24,10 @@
             <h3 class="text-center">Write your own stories!</h3>
         </div>
         </section>
+
+    <form action="" method="post">
+    
+    <input type="text" id="storytitle" maxlength="30">
+    </form>
+
     
