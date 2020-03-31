@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+ <?php 
+ session_start(); 
+ ?>
+
 
 <head>
     <title>Greener Every Step</title>
     <link rel="icon" href="images/mainicon.jpeg" type="image/icon type" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/loginstyle.css">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -17,7 +22,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Greener Every Step</a>
+        <a class="navbar-brand" href="index.php">Greener Every Step</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,32 +31,46 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
+                    <a class="nav-link" href=<?php 
+                    if(isset($_SESSION["loggedin"])){
+                        echo "user.php";
+                    }
+                    else{
+                        echo "php/login.php";
+                    } ?>>
+
+                    <?php
+                    
+                    if(isset($_SESSION["loggedin"])){
+                        echo $_SESSION["username"];
+                    }
+                    else{
+                        echo "Login";
+                    }
+                    ?>
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="stories.html" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" href="stories.php" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Stories
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="stories.html">Read stories</a>
-                        <a class="dropdown-item" href="writestory.html">Write your own</a>
+                        <a class="dropdown-item" href="stories.php">Read stories</a>
+                        <a class="dropdown-item" href="writestory.php">Write your own</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="contactus.html">Contact Us</a>
+                        <a class="dropdown-item" href="contactus.php">Contact Us</a>
                     </div>
                 </li>
             </ul>
 
         </div>
     </nav>
-
-    <section class="my-5">
-        <div class="py-5">
-            <h1 class="text-center">Write your own stories!</h1>
-        </div>
+    </body>
+    </html>
