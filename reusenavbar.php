@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
- <?php 
- session_start(); 
- ?>
+<?php
+session_start();
+?>
 
 
 <head>
@@ -23,8 +23,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php">Greener Every Step</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -37,33 +36,35 @@
                     <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=<?php 
-                    if(isset($_SESSION["loggedin"])){
-                        echo "php/logout.php";
-                    }
-                    else{
-                        echo "php/login.php";
-                    } ?>>
+                    <a class="nav-link" href=<?php
+                                                if (isset($_SESSION["loggedin"])) {
+                                                    echo "php/logout.php";
+                                                } else {
+                                                    echo "php/login.php";
+                                                } ?>>
 
-                    <?php
-                    
-                    if(isset($_SESSION["loggedin"])){
-                        echo $_SESSION["username"];
-                    }
-                    else{
-                        echo "Login";
-                    }
-                    ?>
+                        <?php
+
+                        if (isset($_SESSION["loggedin"])) {
+                            echo $_SESSION["username"];
+                        } else {
+                            echo "Login";
+                        }
+                        ?>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="stories.php" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="stories.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Stories
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="stories.php">Read stories</a>
-                        <a class="dropdown-item" href="writestory.php">Write your own</a>
+                        <a class="dropdown-item" href="<?php
+                                                            if (isset($_SESSION["loggedin"])) {
+                                                                echo "writestory.php";
+                                                            } else {
+                                                                echo "php/login.php";
+                                                            } ?>">Write your own</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="contactus.php">Contact Us</a>
                     </div>
@@ -72,5 +73,6 @@
 
         </div>
     </nav>
-    </body>
-    </html>
+</body>
+
+</html>

@@ -25,9 +25,19 @@
         </div>
         </section>
 
-    <form action="" method="post">
-    
-    <input type="text" id="storytitle" maxlength="30">
+    <form action="php/submitstory.php" method="post">
+    <pre>
+    Title <input type="text" name="storytitle" maxlength="30">
+    Content 
+    <textarea name="content"></textarea>
+    <button>Submit</button>
+    </pre>
     </form>
+
+    </pre>
+    </form>
+
+</body>
+</html>
 
     

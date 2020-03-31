@@ -14,11 +14,12 @@ $message=$_POST['message'];
 
 $query="INSERT INTO `contactform`( `name`, `email`, `subject`, `message`) VALUES ('$name', '$email' , '$subject' , '$message');";
 
-mysqli_query($con, $query);
+echo(mysqli_query($con, $query));
+
 
 echo "Message Sent, Redirecting to Main Page..";
 
-header("Refresh: 3; URL=../index.html"); 
+header("Refresh: 3; URL=../index.php"); 
 
 
 
