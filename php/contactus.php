@@ -12,6 +12,8 @@ $message=$_POST['message'];
 
 
 
+
+
 $query="INSERT INTO `contactform`( `name`, `email`, `subject`, `message`) VALUES ('$name', '$email' , '$subject' , '$message');";
 
 echo(mysqli_query($con, $query));

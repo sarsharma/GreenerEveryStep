@@ -3,19 +3,19 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+
 </head>
 
 <body>
-   <nav>
-    <div id="header">
-        <script>
-                $(function(){
+    <nav>
+        <div id="header">
+            <script>
+                $(function() {
                     $('#header').load('reusenavbar.php');
 
                 });
             </script>
-  
+
         </div>
     </nav>
 
@@ -23,13 +23,15 @@
         <div class="py-2">
             <h3 class="text-center">Write your own stories!</h3>
         </div>
-        </section>
+    </section>
 
-    <form action="php/submitstory.php" method="post">
-    <pre>
+    <form action="php/submitstory.php" method="post" enctype="multipart/form-data">
+        <pre>
     Title <input type="text" name="storytitle" maxlength="30">
     Content 
     <textarea name="content"></textarea>
+    Image
+    <input type="file" name="storyimage" id="storyimage">
     <button>Submit</button>
     </pre>
     </form>
@@ -38,6 +40,5 @@
     </form>
 
 </body>
-</html>
 
-    
+</html>
