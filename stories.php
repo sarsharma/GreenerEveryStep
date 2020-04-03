@@ -22,6 +22,16 @@
         </div>
     </nav>
 
+<?php
+session_start();
+require_once "php/config.php";
+$reader_userid = $_SESSION["id"];
+
+
+
+?>
+
+
     <!--
          <header class="masthead" style="background-image: url('images/introslides/image3.jpeg')">
         <div class="overlay"></div>
