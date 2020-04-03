@@ -39,7 +39,7 @@
             <label for="storyimage" class="form-text">Image for story</label>
             <input type="file" name="storyimage" id="storyimage" class="form-control-file">
 
-            <button type="submit" class="btn btn-primary my-4">Submit</button>
+            <button type="submit" class="btn btn-primary my-4" name="upload">Submit</button>
 
     </div>
 
