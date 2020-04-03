@@ -88,7 +88,7 @@
             We at "Greener Every Step" believe that the best way to connect us humans is through shared stories.
 
           </p>
-          <a href="about.html" class="btn btn-success">Read more</a>
+          <a href="about.php" class="btn btn-success">Read more</a>
         </div>
 
       </div>
@@ -118,7 +118,7 @@
                 Afroz Shaz started picking up the trash from the beach back in 2015, with more and more people...
 
               </p>
-              <a href="mainstories.html#mainstory1" class="btn btn-primary">Read More</a>
+              <a href="mainstories.php#mainstory1" class="btn btn-primary">Read More</a>
             </div>
           </div>
 
@@ -139,7 +139,7 @@
 
 
               </p>
-              <a href="mainstories.html#mainstory2" class="btn btn-primary">Read More</a>
+              <a href="mainstories.php#mainstory2" class="btn btn-primary">Read More</a>
             </div>
           </div>
 
@@ -157,7 +157,7 @@
                 Norphel started...
 
               </p>
-              <a href="mainstories.html#mainstory3" class="btn btn-primary">Read more</a>
+              <a href="mainstories.php#mainstory3" class="btn btn-primary">Read more</a>
             </div>
           </div>
 
