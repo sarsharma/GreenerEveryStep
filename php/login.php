@@ -94,71 +94,83 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style>
+        .bgimg {
+            background-image: url("../images/highres/loginbg.jpg");
+            background-position: center;
+            height: 690px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-        <style type="text/css">
-            body {
-                font: 14px sans-serif;
-            }
-
-            .wrapper {
-                width: 350px;
-                padding: 20px;
-            }
-        </style>
-        <style>
-            .bodybg {
-                background-image: url("../images/highres/bright-countryside-dawn-daylight-302804.jpg");
-                background-position: center;
-                height: 600px;
-                background-repeat: no-repeat;
-
-                background-size: cover;
-            }
-        </style>
-    </head>
+        .div1 {
 
 
+            position: relative;
+        }
 
-<body class="bodybg">
-    <nav>
-        <div id="header">
-            <script>
-                $(function() {
-                    $('#header').load('reusenavbar.php');
+        .div2 {
+            content: "";
+            background: url("../images/highres/bright-countryside-dawn-daylight-302804.jpg");
+            opacity: 0.5;
 
-                });
-            </script>
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
 
-        </div>
-    </nav>
-    <div class="container rounded row align-items-center col-xs-4 col-xs-offset-4 " style="background-color: #ffffff; margin-top: 100px;">
-        <div class="wrapper">
-            <h2>Login</h2>
-            <p>Please fill in your credentials to login.</p>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                    <label>Username</label>
-                    <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                    <span class="help-block"><?php echo $username_err; ?></span>
+
+
+
+<body>
+    <div>
+        <div class="bgimg">
+
+            <nav>
+                <div id="header">
+                    <script>
+                        $(function() {
+                            $('#header').load('reusenavbar.php');
+
+                        });
+                    </script>
+
                 </div>
-                <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control">
-                    <span class="help-block"><?php echo $password_err; ?></span>
+            </nav>
+
+
+            <div class="container h-100" style="color:white;">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <h2>Login</h2>
+                        <p>Please fill in your credentials to login.</p>
+
+                        <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                            <label>Username</label>
+                            <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                            <span class="help-block"><?php echo $username_err; ?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control">
+                            <span class="help-block"><?php echo $password_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Login">
+                        </div>
+                        <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Login">
-                </div>
-                <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-            </form>
+            </div>
+
         </div>
     </div>
+
+
 </body>
 
 </html>
