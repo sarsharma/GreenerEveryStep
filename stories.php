@@ -25,14 +25,38 @@
 <?php
 session_start();
 require_once "php/config.php";
+mysqli_select_db($con, DB_NAME);
 $reader_userid = $_SESSION["id"];
 
+$query="select * from stories";
+$result=$con->query($query);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "userid: " . $row["userid"]. " StoryID " . $row["storyid"]. "Title " . $row["title"].  "Content" . $row["content"]. "time " . $row["time"]. "Image " . $row["image"]."<br>";
+        
+    }
+}
 
 
 ?>
+<img src="imageview.php?time=<?php echo $row["time"]; ?>" /><br/>
+
+
+
 
 
     <!--
+
+        echo '<div class="caption"><h3><img src="data:image/jpeg;base64,'.base64_encode($row['image']).'"/>'. $row['userid']. '</h3></div>';
+
+        echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/> width="100" height="100"';
+        header("Content-type: image/jpeg");
+echo $row['image'];
+
+
+
+
          <header class="masthead" style="background-image: url('images/introslides/image3.jpeg')">
         <div class="overlay"></div>
         <div class="container">

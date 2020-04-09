@@ -59,8 +59,10 @@ if (isset($_POST['upload'])) {
         echo " Your file was not uploaded. ";
         // if everything is ok, try to upload file
     } else {
+        $image =addslashes(file_get_contents($_FILES['storyimage']['tmp_name']));
         if (move_uploaded_file($_FILES["storyimage"]["tmp_name"], $target_file)) {
             #echo "The file " . basename($_FILES["storyimage"]["name"]) . " has been uploaded.";
+            
             $query = "INSERT INTO `stories`(`userid`, `title`, `content`, `time`, `image`) VALUES ('$userid', '$title', '$content', '$ts', '$image')";
            if(!mysqli_query($con , $query)){
                echo $con->error;
@@ -78,6 +80,6 @@ if (isset($_POST['upload'])) {
 
 echo "Story Uploaded, Redirecting to Main Page..";
 
-header("Refresh: 3; URL=../index.php");
+#header("Refresh: 3; URL=../index.php");
 
 ?>

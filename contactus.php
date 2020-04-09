@@ -21,7 +21,7 @@
         </div>
     </nav>
     
-    <div class="container rounded" style="background-color: #ffffff">
+    <div class="container rounded shadow-lg" style="background-color: #ffffff">
         <section class="mb-4">
 
 
