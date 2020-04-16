@@ -80,6 +80,6 @@ if (isset($_POST['upload'])) {
 
 echo "Story Uploaded, Redirecting to Main Page..";
 
-#header("Refresh: 3; URL=../index.php");
+header("Refresh: 3; URL=../index.php");
 
 ?>

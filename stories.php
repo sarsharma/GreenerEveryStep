@@ -22,28 +22,31 @@
         </div>
     </nav>
 
-<?php
-session_start();
-require_once "php/config.php";
-mysqli_select_db($con, DB_NAME);
-$reader_userid = $_SESSION["id"];
+    <div class="container">
 
-$query="select * from stories";
-$result=$con->query($query);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "userid: " . $row["userid"]. " StoryID " . $row["storyid"]. "Title " . $row["title"].  "Content" . $row["content"]. "time " . $row["time"]. "Image " . $row["image"]."<br>";
-        
-    }
-}
+        <?php
+        session_start();
+        require_once "php/config.php";
+        mysqli_select_db($con, DB_NAME);
+        #$reader_userid = $_SESSION["id"];
 
-
-?>
-<img src="imageview.php?time=<?php echo $row["time"]; ?>" /><br/>
+        $query = "select * from stories";
+        $result = $con->query($query);
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "userid: " . $row["userid"] . " StoryID " . $row["storyid"] . "Title " . $row["title"] .  "Content" . $row["content"] . "time " . $row["time"] . "<br>";
 
 
+        ?>
+                <img src="imageview.php?time=<?php echo $row["time"]; ?> " width="400" height="200" /><br />
+        <?php
+            }
+        }
+        mysqli_close($con);
+        ?>
 
+    </div>
 
 
     <!--
@@ -167,7 +170,3 @@ echo $row['image'];
 
 </html>
             -->
-            
-
-
-   

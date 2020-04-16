@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .bgimg {
             background-image: url("../images/highres/loginbg.jpg");
             background-position: center;
-            height: 690px;
+            height: 700px;
             background-repeat: no-repeat;
             background-size: cover;
         }
