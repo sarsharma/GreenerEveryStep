@@ -29,6 +29,18 @@
         require_once "php/config.php";
         mysqli_select_db($con, DB_NAME);
         #$reader_userid = $_SESSION["id"];
+        
+
+        //find story count
+        $query = "select count(*) as cnt from stories";
+        $result = $con->query($query);
+        $row = mysqli_fetch_assoc($result);
+        $total_rows = $row['cnt'];
+        
+
+        $stories_per_page=2;
+
+
 
         $query = "select * from stories order by time desc";
         $result = $con->query($query);
