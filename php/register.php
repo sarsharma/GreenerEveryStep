@@ -78,8 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 // Redirect to login page
-                echo ("Sign Up successful, redirecting");
-                header("Refresh: 2 ; URL=login.php");
+               echo '<script>alert("Sign Up Successful, Redirecting to Login");</script>';
+                
+                header("Refresh: 1 ; URL=login.php");
             } else {
                 echo "Something went wrong. Please try again later.";
             }
