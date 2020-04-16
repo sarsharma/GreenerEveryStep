@@ -78,8 +78,8 @@ if (isset($_POST['upload'])) {
 
 
 
-echo "Story Uploaded, Redirecting to Main Page..";
+echo '<script>alert("Story Uploaded, Redirecting to Story page..");</script>';
 
-header("Refresh: 3; URL=../index.php");
+header("Refresh: 1; URL=../stories.php");
 
 ?>

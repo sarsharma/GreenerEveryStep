@@ -30,16 +30,32 @@
         mysqli_select_db($con, DB_NAME);
         #$reader_userid = $_SESSION["id"];
 
-        $query = "select * from stories";
+        $query = "select * from stories order by time desc";
         $result = $con->query($query);
         if ($result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "userid: " . $row["userid"] . " StoryID " . $row["storyid"] . "Title " . $row["title"] .  "Content" . $row["content"] . "time " . $row["time"] . "<br>";
+                $username_query = "select username from users where id=" . $row["userid"];
+                $query_result = mysqli_query($con, $username_query);
+                while ($res = mysqli_fetch_row($query_result)) {
+                    $username = $res[0];
+                }
+
+                #echo "Story by: " . $username .  "Title " . $row["title"] .  "Content" . $row["content"] . "time " . $row["time"] . "<br>";
+
 
 
         ?>
-                <img src="imageview.php?time=<?php echo $row["time"]; ?> " width="400" height="200" /><br />
+                <div class="shadow">
+                    <H3><?php echo $row['title']; ?></H3>
+                    <p>By <?php echo $username; ?> </p>
+                    <div class="width:100%"></div>
+                    <p><?php echo $row['time']; ?></p>
+                    <img src="imageview.php?time=<?php echo $row["time"]; ?> " height="300" /><br />
+                    <p><?php echo $row['content']; ?></p>
+
+                </div>
+
         <?php
             }
         }

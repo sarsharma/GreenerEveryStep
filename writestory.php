@@ -31,8 +31,8 @@
             <div class="form-group">
                 <label for="storytitle">Title for story(Upto 20 words max)</label>
 
-                <textarea name="storytitle" class="form-control col-5" maxlength="200" style="resize: none; ">
-            </textarea>
+                <input type="text" name="storytitle" class="form-control col-8" maxlength="200" style="resize: none; ">
+            
             </div>
             <label for="content" class="form-check-label">Story Content</label>
             <textarea name="content" class="form-control" rows="10" style="resize: none; "></textarea>
