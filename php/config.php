@@ -1,9 +1,9 @@
 <?php
 #database config
 
-define('DB_SERVER', 'remotemysql.com:3306');
-define('DB_USERNAME', 'JPBHeUjzfq');
-define('DB_PASSWORD', 'h01WPRgTp9');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '1234');
 define('DB_NAME', 'JPBHeUjzfq');
 
 $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);

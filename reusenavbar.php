@@ -36,22 +36,34 @@ session_start();
                     <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
+
+
                     <a class="nav-link" href=<?php
-                                                if (isset($_SESSION["loggedin"])) {
-                                                    echo "php/logout.php";
-                                                } else {
+                                                if (!isset($_SESSION["loggedin"])) {
                                                     echo "php/login.php";
-                                                } ?>>
+                                                }?>>
 
                         <?php
 
                         if (isset($_SESSION["loggedin"])) {
+                            echo "Hello ";
                             echo $_SESSION["username"];
+                            echo " !";
                         } else {
                             echo "Login";
                         }
                         ?>
                     </a>
+                <li class="nav-item">
+                    <a href="php/logout.php" class="nav-link" <?php
+                                                                        if (!isset($_SESSION["loggedin"])) {
+
+                                                                            echo "hidden";
+                                                                        }                                                                        
+                                                                    
+                    ?>>Logout</a>
+                </li>
+
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="stories.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

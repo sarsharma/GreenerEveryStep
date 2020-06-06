@@ -27,7 +27,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="images/highres/cascade-creek-environment-fern-460621.jpg" class="d-block w-100" alt="..."  />
+        <img src="images/highres/cascade-creek-environment-fern-460621.jpg" class="d-block w-100 img-fluid" alt="..."  />
         <div class="carousel-caption d-none d-md-block">
           <h5>Read how small steps can lead to big results</h5>
           <p>

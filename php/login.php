@@ -100,8 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         .bgimg {
             background-image: url("../images/highres/loginbg.jpg");
-            background-position: center;
-            height: 700px;
+            /* background-position: center; */
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -126,10 +125,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<body>
+<body class="bgimg">
     <div>
-        <div class="bgimg">
-
             <nav>
                 <div id="header">
                     <script>
@@ -143,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </nav>
 
 
-            <div class="container h-100" style="color:white;">
+            <div class="container-fluid h-100" style="color:white; margin-top:200px">
                 <div class="row h-100 justify-content-center align-items-center">
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <h2>Login</h2>
@@ -167,7 +164,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
 
-        </div>
     </div>
 
 

@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Set parameters
             $param_username = trim($_POST["username"]);
+            
 
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
