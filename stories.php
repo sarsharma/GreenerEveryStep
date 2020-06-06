@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,13 +27,39 @@
     </nav>
 
     <div class="container">
+        <div>
+            <h2 class="my-3 text-center">Read awesome Stories!</h2>
+            <div class="justify-content-right text-right">
+                <form action="#" method="post">
+                    Sort By:
+                    <select name="sort_option" id="">
+                        <option value="desc" selected=<?php
+                                                    if($_SESSION["sort_option"]=="desc"){
+                                                        echo "false";
+                                                    }
+                        ?>
+                        >Newest</option>
+                        <option value="asc">Oldest</option>
+                    </select>
+                    <button class="btn btn-secondary">Go</button>
 
+                </form>
+
+            </div>
+        </div>
         <?php
-        session_start();
+        
         require_once "php/config.php";
         mysqli_select_db($con, DB_NAME);
         #$reader_userid = $_SESSION["id"];
 
+        $_SESSION["sort_option"]="desc"; //by default descending sort
+
+        if(isset($_POST["sort_option"])){                    
+        $_SESSION["sort_option"]=$_POST["sort_option"];   //updating according to user choice
+        }
+
+     # echo $_SESSION["sort_option"];
 
         //find story count
         $query = "select count(*) as cnt from stories";
@@ -42,7 +72,8 @@
 
 
 
-        $query = "select * from stories order by time desc";
+        $query = "select * from stories order by time ".$_SESSION["sort_option"];
+
         $result = $con->query($query);
         if ($result->num_rows > 0) {
             // output data of each row
@@ -62,7 +93,7 @@
                 <div class="shadow rounded border my-5">
                     <H3 class="text-center mt-3 mb-2"><?php echo $row['title']; ?></H3>
                     <p class="px-3">By <?php echo $username; ?> </p>
-                    
+
                     <p class="px-3"><?php echo $row['time']; ?></p>
                     <div class="justify-content-center text-center">
                         <img src="imageview.php?time=<?php echo $row["time"]; ?> " height="300" />
