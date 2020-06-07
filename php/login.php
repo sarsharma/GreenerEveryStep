@@ -65,8 +65,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 
+                            
+                            //check if cookie already existts
+
+                            if (isset($_COOKIE['lastlogin'])) {
+                                $visit = $_COOKIE['lastlogin'];
+                                $visitdetaials = "Your last visit was - " . $visit;
+                                echo "<script>alert('$visitdetaials');</script>"; 
+
+                            }
+
+                            setcookie('lastlogin', date("G:i - d/m/y"), time() + (86400 * 365));
+                            //update last login time
+
+
+
                             // Redirect user to welcome page
-                            header("location: ../index.php");
+                           //header("Location:../index.php");
+                           header("Refresh:1; url=../index.php");
                         } else {
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";

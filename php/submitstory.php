@@ -6,6 +6,7 @@ mysqli_select_db($con, DB_NAME);
 
 $title=$_POST["storytitle"];
 $content=$_POST["content"];
+
 $userid=$_SESSION["id"];
 
 $result = mysqli_query($con, "select now()");

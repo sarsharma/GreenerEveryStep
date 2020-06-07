@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validate email
     if (empty(trim($_POST["email"]))) {
-        $username_err = "Please enter an email.";
+        $email_err = "Please enter an email.";
     } else {
         // Prepare a select statement
         $sql = "SELECT email FROM users WHERE email = ?";
